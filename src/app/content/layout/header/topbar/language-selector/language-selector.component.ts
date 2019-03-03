@@ -1,7 +1,7 @@
-import { filter } from 'rxjs/operators';
-import { Component, ElementRef, HostBinding, OnInit } from '@angular/core';
-import { TranslationService } from '../../../../../core/services/translation.service';
-import { NavigationStart, Router } from '@angular/router';
+import { filter } from "rxjs/operators";
+import { Component, ElementRef, HostBinding, OnInit } from "@angular/core";
+import { TranslationService } from "../../../../../core/services/translation.service";
+import { NavigationStart, Router } from "@angular/router";
 
 interface LanguageFlag {
 	lang: string;
@@ -11,46 +11,52 @@ interface LanguageFlag {
 }
 
 @Component({
-	selector: 'm-language-selector',
-	templateUrl: './language-selector.component.html',
-	styleUrls: ['./language-selector.component.scss']
+	selector: "m-language-selector",
+	templateUrl: "./language-selector.component.html",
+	styleUrls: ["./language-selector.component.scss"]
 })
 export class LanguageSelectorComponent implements OnInit {
 	// tslint:disable-next-line:max-line-length
-	@HostBinding('class') classes = 'm-nav__item m-topbar__languages m-dropdown m-dropdown--small m-dropdown--arrow m-dropdown--align-right m-dropdown--header-bg-fill m-dropdown--mobile-full-width';
-	@HostBinding('attr.m-dropdown-toggle') mDropdownToggle = 'click';
+	@HostBinding("class") classes =
+		"m-nav__item m-topbar__languages m-dropdown m-dropdown--small m-dropdown--arrow m-dropdown--align-right m-dropdown--header-bg-fill m-dropdown--mobile-full-width";
+	@HostBinding("attr.m-dropdown-toggle") mDropdownToggle = "click";
 	language: LanguageFlag;
 	languages: LanguageFlag[] = [
 		{
-			lang: 'en',
-			country: 'USA',
-			flag: 'assets/app/media/img/flags/020-flag.svg'
+			lang: "en",
+			country: "انگلیسی",
+			flag: "assets/app/media/img/flags/020-flag.svg"
 		},
 		{
-			lang: 'ch',
-			country: 'China',
-			flag: 'assets/app/media/img/flags/015-china.svg'
-		},
-		{
-			lang: 'es',
-			country: 'Spain',
-			flag: 'assets/app/media/img/flags/016-spain.svg'
-		},
-		{
-			lang: 'jp',
-			country: 'Japan',
-			flag: 'assets/app/media/img/flags/014-japan.svg'
-		},
-		{
-			lang: 'de',
-			country: 'Germany',
-			flag: 'assets/app/media/img/flags/017-germany.svg'
-		},
-		{
-			lang: 'fr',
-			country: 'France',
-			flag: 'assets/app/media/img/flags/019-france.svg'
-		},
+			lang: "fa",
+			country: "فارسی",
+			flag: "assets/app/media/img/flags/21-iran.svg"
+		}
+		// {
+		// 	lang: 'ch',
+		// 	country: 'China',
+		// 	flag: 'assets/app/media/img/flags/015-china.svg'
+		// },
+		// {
+		// 	lang: 'es',
+		// 	country: 'Spain',
+		// 	flag: 'assets/app/media/img/flags/016-spain.svg'
+		// },
+		// {
+		// 	lang: 'jp',
+		// 	country: 'Japan',
+		// 	flag: 'assets/app/media/img/flags/014-japan.svg'
+		// },
+		// {
+		// 	lang: 'de',
+		// 	country: 'Germany',
+		// 	flag: 'assets/app/media/img/flags/017-germany.svg'
+		// },
+		// {
+		// 	lang: 'fr',
+		// 	country: 'France',
+		// 	flag: 'assets/app/media/img/flags/019-france.svg'
+		// },
 	];
 
 	constructor(
@@ -79,7 +85,9 @@ export class LanguageSelectorComponent implements OnInit {
 		});
 		this.translationService.setLanguage(lang);
 
-		(<DOMTokenList>this.el.nativeElement.classList).remove('m-dropdown--open');
+		(<DOMTokenList>this.el.nativeElement.classList).remove(
+			"m-dropdown--open"
+		);
 	}
 
 	setSelectedLanguage(): any {
