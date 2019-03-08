@@ -3,7 +3,7 @@
 	<ng-container mPortletHeadTitle>
 		<div class="m-portlet__head-title">
 			<h3 class="m-portlet__head-text">
-				Recent Products
+				محصولات اخیر
 			</h3>
 		</div>
 	</ng-container>
@@ -17,49 +17,49 @@
 			<!-- https://run.stackblitz.com/api/angular/v1?file=app%2Ftable-selection-example.ts -->
 			<table mat-table class="lmat-elevation-z8" [dataSource]="dataSource" matSort matSortActive="id" matSortDirection="asc" matSortDisableClear>
 				<ng-container matColumnDef="id">
-					<th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
+					<th mat-header-cell *matHeaderCellDef mat-sort-header>شناسه</th>
 					<td mat-cell *matCellDef="let product" class="mat-column-vinCode">{{product.id}}</td>
 				</ng-container>
 
 				<ng-container matColumnDef="cManufacture">
-					<th mat-header-cell *matHeaderCellDef mat-sort-header>Manufacture</th>
+					<th mat-header-cell *matHeaderCellDef mat-sort-header>شرکت</th>
 					<td mat-cell *matCellDef="let product">{{product.cManufacture}}</td>
 				</ng-container>
 
 				<ng-container matColumnDef="cModel">
-					<th mat-header-cell *matHeaderCellDef mat-sort-header>Model</th>
+					<th mat-header-cell *matHeaderCellDef mat-sort-header>مدل</th>
 					<td mat-cell *matCellDef="let product">{{product.cModel}}</td>
 				</ng-container>
 
 				<ng-container matColumnDef="cModelYear">
-					<th mat-header-cell *matHeaderCellDef mat-sort-header>Model Year</th>
+					<th mat-header-cell *matHeaderCellDef mat-sort-header>سال ساخت</th>
 					<td mat-cell *matCellDef="let product">{{product.cModelYear}}</td>
 				</ng-container>
 
 				<ng-container matColumnDef="cMileage">
-					<th mat-header-cell *matHeaderCellDef mat-sort-header>Mileage</th>
+					<th mat-header-cell *matHeaderCellDef mat-sort-header>تعداد</th>
 					<td mat-cell *matCellDef="let product">{{product.cMileage}}</td>
 				</ng-container>
 
 				<ng-container matColumnDef="cColor">
-					<th mat-header-cell *matHeaderCellDef mat-sort-header>Color</th>
+					<th mat-header-cell *matHeaderCellDef mat-sort-header>رنگ</th>
 					<td mat-cell *matCellDef="let product" [ngStyle]="{ 'color' : product.cColor }">{{product.cColor}}</td>
 				</ng-container>
 
 				<ng-container matColumnDef="cPrice">
-					<th mat-header-cell *matHeaderCellDef mat-sort-header>Price</th>
+					<th mat-header-cell *matHeaderCellDef mat-sort-header>قیمت</th>
 					<td mat-cell *matCellDef="let product">${{product.cPrice}}</td>
 				</ng-container>
 
 				<ng-container matColumnDef="cStatus">
-					<th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+					<th mat-header-cell *matHeaderCellDef mat-sort-header>وضعیت</th>
 					<td mat-cell *matCellDef="let product">
 						<span class="m-badge m-badge--{{ getItemCssClassByStatus(product.cStatus) }} m-badge--wide">{{ getItemStatusString(product.cStatus) }}</span>
 					</td>
 				</ng-container>
 
 				<ng-container matColumnDef="cCondition">
-					<th mat-header-cell *matHeaderCellDef mat-sort-header>Condition</th>
+					<th mat-header-cell *matHeaderCellDef mat-sort-header>شرایط</th>
 					<td mat-cell *matCellDef="let product">
 						<span class="m-badge m-badge--{{ getItemCssClassByCondition(product.cCondition) }} m-badge--dot"></span>&nbsp;
 						<span class="m--font-bold m--font-{{ getItemCssClassByCondition(product.cCondition) }}">{{ getItemConditionString(product.cCondition) }}</span>
@@ -68,14 +68,14 @@
 
 				<ng-container matColumnDef="actions">
 					<th mat-header-cell *matHeaderCellDef>
-						Actions
+						عملیات
 					</th>
 					<td mat-cell *matCellDef="let product">
 						<button mat-icon-button color="primary" matTooltip="Edit item">
-							<mat-icon>create</mat-icon>
+							<mat-icon>ایجاد</mat-icon>
 						</button>&nbsp;
 						<button mat-icon-button color="warn" type="button" matTooltip="Delete item">
-							<mat-icon>delete</mat-icon>
+							<mat-icon>حذف</mat-icon>
 						</button>
 					</td>
 				</ng-container>
@@ -84,7 +84,7 @@
 				<tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 			</table>
 
-			<div class="mat-table__message" *ngIf="!dataSource.hasItems">No records found</div>
+			<div class="mat-table__message" *ngIf="!dataSource.hasItems">رکوردی برای نمایش وجود ندارد</div>
 		</div>
 		<!-- start: BOTTOM -->
 		<div class="mat-table__bottom">
