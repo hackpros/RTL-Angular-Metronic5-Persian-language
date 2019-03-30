@@ -7,7 +7,7 @@ Demo(https://mhosseinkhani.github.io/)
 # نحوه استفاده
 $ npm i
 
-$ ng serve
+$ ng serve --port 4200
 
 
 
